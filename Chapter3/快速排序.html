@@ -1,0 +1,717 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第四节 快速排序 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="归并排序.html" />
+    
+    
+    <link rel="prev" href="插入排序.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Chapter1/">
+            
+                <a href="../Chapter1/">
+            
+                    
+                    第一章-递归(Recursion)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Chapter1/Recursive-Array-Sum.html">
+            
+                <a href="../Chapter1/Recursive-Array-Sum.html">
+            
+                    
+                    1-数组求和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Chapter1/generate01.html">
+            
+                <a href="../Chapter1/generate01.html">
+            
+                    
+                    2-生成所有的01组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Chapter1/combineGenerator.html">
+            
+                <a href="../Chapter1/combineGenerator.html">
+            
+                    
+                    3-所有数字组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Chapter1/eight-Queen-puzzle.html">
+            
+                <a href="../Chapter1/eight-Queen-puzzle.html">
+            
+                    
+                    4-八皇后问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../Chapter1/find-and-print-paths.html">
+            
+                <a href="../Chapter1/find-and-print-paths.html">
+            
+                    
+                    5-找到并打印所有路径
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Chapter2/">
+            
+                <a href="../Chapter2/">
+            
+                    
+                    第二章-组合及排列(Combinatorial)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Chapter2/简单组合.html">
+            
+                <a href="../Chapter2/简单组合.html">
+            
+                    
+                    第一节 元素重复有序组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Chapter2/元素只取一次组合.html">
+            
+                <a href="../Chapter2/元素只取一次组合.html">
+            
+                    
+                    第二节 元素不重复有序组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Chapter2/元素可重复但顺序无影响.html">
+            
+                <a href="../Chapter2/元素可重复但顺序无影响.html">
+            
+                    
+                    第三节 元素重复无序组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../Chapter2/元素不可重复并且顺序无影响.html">
+            
+                <a href="../Chapter2/元素不可重复并且顺序无影响.html">
+            
+                    
+                    第四节 元素不重复无序组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../Chapter2/遍历生成数字组合.html">
+            
+                <a href="../Chapter2/遍历生成数字组合.html">
+            
+                    
+                    第五节 数字递增形式的组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../Chapter2/排列问题.html">
+            
+                <a href="../Chapter2/排列问题.html">
+            
+                    
+                    第六节 元素无重复排列问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../Chapter2/有元素重复排序问题.html">
+            
+                <a href="../Chapter2/有元素重复排序问题.html">
+            
+                    
+                    第七节 有元素重复排列问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第三章-排序及搜索(Sorting-Searching)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="选择排序.html">
+            
+                <a href="选择排序.html">
+            
+                    
+                    第一节 选择排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="冒泡排序.html">
+            
+                <a href="冒泡排序.html">
+            
+                    
+                    第二节 冒泡排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="插入排序.html">
+            
+                <a href="插入排序.html">
+            
+                    
+                    第三节 插入排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.4" data-path="快速排序.html">
+            
+                <a href="快速排序.html">
+            
+                    
+                    第四节 快速排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="归并排序.html">
+            
+                <a href="归并排序.html">
+            
+                    
+                    第五节 归并排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="二分法搜索.html">
+            
+                <a href="二分法搜索.html">
+            
+                    
+                    第六节 二分搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="插补法搜索.html">
+            
+                <a href="插补法搜索.html">
+            
+                    
+                    第七节 插补法搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="洗牌算法.html">
+            
+                <a href="洗牌算法.html">
+            
+                    
+                    第八节 洗牌算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Chapter4/">
+            
+                <a href="../Chapter4/">
+            
+                    
+                    第四章-动态规划(Dynamic Programming)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Chapter4/LIS-Algorithm.html">
+            
+                <a href="../Chapter4/LIS-Algorithm.html">
+            
+                    
+                    第一节 找最长子串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Chapter4/Right-Down.html">
+            
+                <a href="../Chapter4/Right-Down.html">
+            
+                    
+                    第二节 计算最大和
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第四节 快速排序</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x5FEB;&#x901F;&#x6392;&#x5E8F;">&#x5FEB;&#x901F;&#x6392;&#x5E8F;</h2>
+<ul>
+<li><p>QuickSort &#x2013; efficient sorting algorithm (visualize)</p>
+<ul>
+<li>Choose a pivot; move smaller elements left &amp; larger right; sort left &amp; right</li>
+</ul>
+</li>
+<li><p>Best &amp; average case: O(n*log(n)); Worst: O(n2)</p>
+</li>
+<li>Memory: O(log(n)) stack space (for recursion)</li>
+</ul>
+<p><a href="https://www.coursera.org/learn/algorithms-part1/lecture/vjvnC/quicksort" target="_blank">algorithm&#x8BFE;&#x7A0B;</a></p>
+<p><img src="../images/chapter3/quicksort.png" alt=""></p>
+<p>&#x5FEB;&#x901F;&#x5FEB;&#x901F;&#x7684;&#x5B8C;&#x6574;&#x8DDF;&#x8E2A;</p>
+<p><img src="../images/chapter3/quicksort-2.png" alt=""></p>
+<p>&#x6700;&#x574F;&#x60C5;&#x51B5;&#x7684;&#x6837;&#x5B50;</p>
+<p>Best &amp; average case: O(n*log(n)); Worst: O(n2)
+<img src="../images/chapter3/quicksort-3.png" alt=""></p>
+<h2 id="quick-sort">quick-sort</h2>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">quick_sort</span><span class="hljs-params">(arr,lo,hi)</span>:</span>
+    <span class="hljs-keyword">if</span> lo &lt; hi:
+        p = Partion(arr,lo,hi)
+        quick_sort(arr,lo,p)
+        quick_sort(arr,p+<span class="hljs-number">1</span>,hi)
+</code></pre>
+<h2 id="lomuto-partioning">Lomuto partioning</h2>
+<blockquote>
+<p>&#x4ECE;&#x5DE6;&#x5230;&#x53F3;&#x627E;&#x5206;&#x5272;&#x70B9;</p>
+</blockquote>
+<p>&#x9009;&#x62E9;pivot,&#x653E;&#x5728;&#x6700;&#x5DE6;&#x8FB9;
+&#x5B9A;&#x4E49;store&#x7D22;&#x5F15;&#x6765;&#x5B58;&#x50A8;&#x5373;&#x5C06;&#x4E0B;&#x4E00;&#x4E2A;&#x6BD4;pivot&#x5C0F;&#x7684;&#x6570;
+&#x4ECE;&#x5DE6;&#x5230;&#x53F3;&#x8FDB;&#x884C;&#x904D;&#x5386;&#xFF0C;&#x76F4;&#x5230;&#x7ED3;&#x675F;
+&#x5B9A;&#x4F4D;&#x5230;pivot&#x5E94;&#x8BE5;&#x51FA;&#x4E8E;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x6B64;&#x65F6;&#x662F;store(&#x8868;&#x793A;&#x5B58;&#x50A8;&#x4E0B;&#x4E00;&#x4E2A;&#x6BD4;pivot&#x5C0F;&#x7684;&#x6570;)&#x5E94;&#x8BE5;&#x51CF;1&#xFF0C;store-1&#x7684;&#x4F4D;&#x7F6E;&#x5C31;&#x662F;pivot&#x7684;&#x4F4D;&#x7F6E;
+&#x4EA4;&#x6362;&#x6700;&#x5DE6;&#x8FB9;0&#x4E0E;store-1&#x7684;&#x5143;&#x7D20;&#xFF0C;
+&#x5219;store-1&#x5C31;&#x662F;&#x5206;&#x5272;&#x70B9;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># Lomuto partioning</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Partion</span><span class="hljs-params">(arr,lo,hi)</span>:</span>
+    <span class="hljs-comment"># &#x67A2;&#x7EBD;&#x70B9;</span>
+    pivot = arr[lo]
+    store = lo+<span class="hljs-number">1</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(store,hi+<span class="hljs-number">1</span>):
+        <span class="hljs-keyword">if</span> arr[i] &lt;= pivot:
+            swap(arr,i,store)
+            store += <span class="hljs-number">1</span>
+    store -= <span class="hljs-number">1</span>
+    swap(arr,lo,store)
+    <span class="hljs-keyword">return</span> store
+</code></pre>
+<h2 id="hoare-partitioning">Hoare Partitioning</h2>
+<blockquote>
+<p>&#x4E24;&#x5934;&#x5E76;&#x8FDB;&#x627E;&#x5206;&#x5272;&#x70B9;</p>
+</blockquote>
+<pre><code>&#x521D;&#x59CB;&#x5316;
+left = lo+1
+right = hi
+
+&#x5FAA;&#x73AF;&#xFF1A;
+    &#x5F53;arr[left] &lt; pivot&#x65F6;&#xFF0C;left+1&#x524D;&#x8FDB;&#xFF0C;&#x76F4;&#x5230;hi
+    &#x5F53;arr[right]&gt;pivot&#x65F6;&#xFF0C;right-1&#x524D;&#x8FDB;&#xFF0C;&#x76F4;&#x5230;right&#x51CF;&#x5230;lo&#x65F6;&#xFF0C;&#x6B64;&#x65F6;&#x7684;arr[right] = arr[lo]
+    &#x5982;&#x679C;right&lt; left &#x9000;&#x51FA;&#xFF0C;
+    &#x5426;&#x5219; swap(right,left)&#x7EE7;&#x7EED;&#x5FAA;&#x73AF;
+
+&#x4EA4;&#x6362;pivot&#x4E0E;right&#x7684;&#x5143;&#x7D20;
+&#x8FD4;&#x56DE;rights
+</code></pre><h2 id="&#x4F8B;&#x5B50;">&#x4F8B;&#x5B50;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> random
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">quick_sort</span><span class="hljs-params">(arr,lo,hi)</span>:</span>
+    <span class="hljs-keyword">if</span> lo &lt; hi:
+       <span class="hljs-comment"># p = Lomuto_Partion(arr,lo,hi)</span>
+        p = Hoare_Partion(arr,lo,hi)
+        quick_sort(arr,lo,p)
+        quick_sort(arr,p+<span class="hljs-number">1</span>,hi)
+
+<span class="hljs-comment"># Lomuto partioning</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Lomuto_Partion</span><span class="hljs-params">(arr,lo,hi)</span>:</span>
+    <span class="hljs-comment"># &#x67A2;&#x7EBD;&#x70B9;</span>
+    pivot = arr[lo]
+    store = lo+<span class="hljs-number">1</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(store,hi+<span class="hljs-number">1</span>):
+        <span class="hljs-keyword">if</span> arr[i] &lt;= pivot:
+            swap(arr,i,store)
+            store += <span class="hljs-number">1</span>
+    store -= <span class="hljs-number">1</span>
+    swap(arr,lo,store)
+    <span class="hljs-keyword">return</span> store
+
+
+<span class="hljs-comment"># Hoare Partitioning</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Hoare_Partion</span><span class="hljs-params">(arr,lo,hi)</span>:</span>
+    pivot = arr[lo]
+    left = lo+<span class="hljs-number">1</span>
+    right = hi
+    <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+        <span class="hljs-keyword">while</span> left&lt;=hi <span class="hljs-keyword">and</span> arr[left] &lt;= pivot:
+            left += <span class="hljs-number">1</span>
+        <span class="hljs-keyword">while</span> arr[right] &gt; pivot:
+            right -= <span class="hljs-number">1</span>
+        <span class="hljs-keyword">if</span> right&lt;left:
+            <span class="hljs-keyword">break</span>
+        <span class="hljs-keyword">else</span>:
+            swap(arr,left,right)
+    swap(arr,lo,right)
+    <span class="hljs-keyword">return</span> right
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">swap</span><span class="hljs-params">(arr,i,j)</span>:</span>
+    arr[i],arr[j] = arr[j],arr[i]
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    arr = [_ <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(<span class="hljs-number">10</span>)]
+    random.shuffle(arr)
+    print(<span class="hljs-string">&quot;Before: &quot;</span>,arr)
+    quick_sort(arr,<span class="hljs-number">0</span>,len(arr)<span class="hljs-number">-1</span>)
+    print(<span class="hljs-string">&quot;After: &quot;</span>,arr)
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="插入排序.html" class="navigation navigation-prev " aria-label="Previous page: 第三节 插入排序">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="归并排序.html" class="navigation navigation-next " aria-label="Next page: 第五节 归并排序">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第四节 快速排序","level":"1.4.4","depth":2,"next":{"title":"第五节 归并排序","level":"1.4.5","depth":2,"path":"Chapter3/归并排序.md","ref":"Chapter3/归并排序.md","articles":[]},"previous":{"title":"第三节 插入排序","level":"1.4.3","depth":2,"path":"Chapter3/插入排序.md","ref":"Chapter3/插入排序.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","livereload"],"pluginsConfig":{"expandable-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter3/快速排序.md","mtime":"2019-03-06T05:19:04.140Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-09T08:49:34.446Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

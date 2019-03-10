@@ -1,0 +1,659 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第二章-组合及排列(Combinatorial) · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="简单组合.html" />
+    
+    
+    <link rel="prev" href="../Chapter1/find-and-print-paths.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Chapter1/">
+            
+                <a href="../Chapter1/">
+            
+                    
+                    第一章-递归(Recursion)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Chapter1/Recursive-Array-Sum.html">
+            
+                <a href="../Chapter1/Recursive-Array-Sum.html">
+            
+                    
+                    1-数组求和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Chapter1/generate01.html">
+            
+                <a href="../Chapter1/generate01.html">
+            
+                    
+                    2-生成所有的01组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Chapter1/combineGenerator.html">
+            
+                <a href="../Chapter1/combineGenerator.html">
+            
+                    
+                    3-所有数字组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Chapter1/eight-Queen-puzzle.html">
+            
+                <a href="../Chapter1/eight-Queen-puzzle.html">
+            
+                    
+                    4-八皇后问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../Chapter1/find-and-print-paths.html">
+            
+                <a href="../Chapter1/find-and-print-paths.html">
+            
+                    
+                    5-找到并打印所有路径
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第二章-组合及排列(Combinatorial)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="简单组合.html">
+            
+                <a href="简单组合.html">
+            
+                    
+                    第一节 元素重复有序组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="元素只取一次组合.html">
+            
+                <a href="元素只取一次组合.html">
+            
+                    
+                    第二节 元素不重复有序组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="元素可重复但顺序无影响.html">
+            
+                <a href="元素可重复但顺序无影响.html">
+            
+                    
+                    第三节 元素重复无序组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="元素不可重复并且顺序无影响.html">
+            
+                <a href="元素不可重复并且顺序无影响.html">
+            
+                    
+                    第四节 元素不重复无序组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="遍历生成数字组合.html">
+            
+                <a href="遍历生成数字组合.html">
+            
+                    
+                    第五节 数字递增形式的组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="排列问题.html">
+            
+                <a href="排列问题.html">
+            
+                    
+                    第六节 元素无重复排列问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="有元素重复排序问题.html">
+            
+                <a href="有元素重复排序问题.html">
+            
+                    
+                    第七节 有元素重复排列问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Chapter3/">
+            
+                <a href="../Chapter3/">
+            
+                    
+                    第三章-排序及搜索(Sorting-Searching)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Chapter3/选择排序.html">
+            
+                <a href="../Chapter3/选择排序.html">
+            
+                    
+                    第一节 选择排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Chapter3/冒泡排序.html">
+            
+                <a href="../Chapter3/冒泡排序.html">
+            
+                    
+                    第二节 冒泡排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Chapter3/插入排序.html">
+            
+                <a href="../Chapter3/插入排序.html">
+            
+                    
+                    第三节 插入排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../Chapter3/快速排序.html">
+            
+                <a href="../Chapter3/快速排序.html">
+            
+                    
+                    第四节 快速排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../Chapter3/归并排序.html">
+            
+                <a href="../Chapter3/归并排序.html">
+            
+                    
+                    第五节 归并排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../Chapter3/二分法搜索.html">
+            
+                <a href="../Chapter3/二分法搜索.html">
+            
+                    
+                    第六节 二分搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../Chapter3/插补法搜索.html">
+            
+                <a href="../Chapter3/插补法搜索.html">
+            
+                    
+                    第七节 插补法搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../Chapter3/洗牌算法.html">
+            
+                <a href="../Chapter3/洗牌算法.html">
+            
+                    
+                    第八节 洗牌算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Chapter4/">
+            
+                <a href="../Chapter4/">
+            
+                    
+                    第四章-动态规划(Dynamic Programming)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Chapter4/LIS-Algorithm.html">
+            
+                <a href="../Chapter4/LIS-Algorithm.html">
+            
+                    
+                    第一节 找最长子串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Chapter4/Right-Down.html">
+            
+                <a href="../Chapter4/Right-Down.html">
+            
+                    
+                    第二节 计算最大和
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第二章-组合及排列(Combinatorial)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p><strong>the recursive algorithms to generate variations and combinations (with and without repetition)!</strong></p>
+<h2 id="introduction">Introduction</h2>
+<ul>
+<li>&#x7EC4;&#x5408;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x5143;&#x7D20;&#x662F;&#x5426;&#x80FD;&#x91CD;&#x590D;&#x53D6;&#xFF0C;&#x53D6;&#x51FA;&#x7684;&#x5143;&#x7D20;&#x4E4B;&#x95F4;&#x987A;&#x5E8F;&#x662F;&#x5426;&#x8003;&#x8651;</li>
+<li>&#x4F7F;&#x7528;&#x9012;&#x5F52;&#x7684;&#x65B9;&#x6CD5;</li>
+</ul>
+<h2 id="generate-variations-with-repetition">Generate Variations with Repetition</h2>
+<ul>
+<li>for&#x5FAA;&#x73AF;+&#x9012;&#x5F52;</li>
+</ul>
+<ul>
+<li>Algorithm Var(index) to generate variations V(n, k)<ul>
+<li>Put the numbers 0 &#x2026; n-1 at position index</li>
+<li>Call Var(index + 1) to generate the rest of the array</li>
+</ul>
+</li>
+</ul>
+<p><img src="../images/variations_repetitions.png" alt=""></p>
+<p><strong>&#x4F8B;&#x5B50;</strong></p>
+<ul>
+<li><a href="&#x7B80;&#x5355;&#x7EC4;&#x5408;.html">&#x5143;&#x7D20;&#x91CD;&#x590D;&#x6709;&#x5E8F;&#x7EC4;&#x5408;</a></li>
+</ul>
+<h2 id="variations-without-repetition">Variations without Repetition</h2>
+<blockquote>
+<p>Keep Track of Used Numbers</p>
+</blockquote>
+<p><strong>&#x8003;&#x8651;&#x987A;&#x5E8F;&#x4F46;&#x662F;&#x4E0D;&#x91CD;&#x590D;&#xFF0C;&#x8FD9;&#x5C31;&#x53EF;&#x4EE5;&#x6210;&#x4E3A;&#x4E00;&#x4E2A;&#x6392;&#x5217;&#x95EE;&#x9898;Permutations</strong></p>
+<ul>
+<li><a href="&#x5143;&#x7D20;&#x53EA;&#x53D6;&#x4E00;&#x6B21;&#x7EC4;&#x5408;.html">&#x5143;&#x7D20;&#x4E0D;&#x91CD;&#x590D;&#x6709;&#x5E8F;&#x7EC4;&#x5408;<strong>&#x4E2D;&#x7684;&#x6392;&#x5217;&#x89E3;&#x6CD5;</strong></a></li>
+</ul>
+<p><strong>&#x4F8B;&#x5B50;</strong></p>
+<ul>
+<li><a href="&#x5143;&#x7D20;&#x53EA;&#x53D6;&#x4E00;&#x6B21;&#x7EC4;&#x5408;.html">&#x5143;&#x7D20;&#x4E0D;&#x91CD;&#x590D;&#x6709;&#x5E8F;&#x7EC4;&#x5408;</a></li>
+</ul>
+<h2 id="generate-combinations-with-repetition">Generate Combinations with Repetition</h2>
+<blockquote>
+<p>In combinations, order does not matter (unlike variations). This means that the combinations (1, 2) and (2, 1) are considered the same and once we obtain one of them, the other is no longer valid.</p>
+</blockquote>
+<p>for&#x5FAA;&#x73AF;&#x7684;start&#x4E5F;&#x5C31;&#x662F;&#x4ECE;&#x96C6;&#x5408;&#x4E2D;&#x53D6;&#x7684;&#x6570;&#x636E;&#x8303;&#x56F4;&#x7F29;&#x5C0F;</p>
+<p><strong>&#x4F8B;&#x5B50;</strong></p>
+<p><a href="&#x5143;&#x7D20;&#x53EF;&#x91CD;&#x590D;&#x4F46;&#x987A;&#x5E8F;&#x65E0;&#x5F71;&#x54CD;.html">&#x5143;&#x7D20;&#x91CD;&#x590D;&#x65E0;&#x5E8F;&#x7EC4;&#x5408;</a></p>
+<h2 id="generate-combinations-without-repetition">Generate Combinations without Repetition</h2>
+<p>Generate Combinations with Repetition&#x5DEE;&#x4E0D;&#x591A;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5728;&#x9012;&#x5F52;&#x4F20;&#x9012;&#x96C6;&#x5408;&#x8303;&#x56F4;&#x7684;&#x65F6;&#x5019;&#x5904;&#x7406;&#x4E0B;&#x5373;&#x53EF;</p>
+<pre><code class="lang-python">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(start,size_of_set+<span class="hljs-number">1</span>):
+            arr[index] = i
+            <span class="hljs-comment">#<span class="hljs-doctag">TODO:</span> continue generating varations  starting with index+1,i+1</span>
+            generate_variations(arr,size_of_set,index+<span class="hljs-number">1</span>,i+<span class="hljs-number">1</span>)
+</code></pre>
+<p><strong>&#x4F8B;&#x5B50;</strong>
+<a href="&#x5143;&#x7D20;&#x4E0D;&#x53EF;&#x91CD;&#x590D;&#x5E76;&#x4E14;&#x987A;&#x5E8F;&#x65E0;&#x5F71;&#x54CD;.html">&#x7B2C;&#x56DB;&#x8282; &#x5143;&#x7D20;&#x4E0D;&#x91CD;&#x590D;&#x65E0;&#x5E8F;&#x7EC4;&#x5408;</a></p>
+<h2 id="variations-iterative-algorithm">Variations: Iterative Algorithm</h2>
+<blockquote>
+<p>&#x5141;&#x8BB8;&#x91CD;&#x590D;</p>
+</blockquote>
+<p><strong>&#x4F8B;&#x5B50;</strong></p>
+<p><a href="&#x904D;&#x5386;&#x751F;&#x6210;&#x6570;&#x5B57;&#x7EC4;&#x5408;.html">&#x7B2C;&#x4E94;&#x8282; &#x6570;&#x5B57;&#x9012;&#x589E;&#x5F62;&#x5F0F;&#x7684;&#x7EC4;&#x5408;</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../Chapter1/find-and-print-paths.html" class="navigation navigation-prev " aria-label="Previous page: 5-找到并打印所有路径">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="简单组合.html" class="navigation navigation-next " aria-label="Next page: 第一节 元素重复有序组合">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第二章-组合及排列(Combinatorial)","level":"1.3","depth":1,"next":{"title":"第一节 元素重复有序组合","level":"1.3.1","depth":2,"path":"Chapter2/简单组合.md","ref":"Chapter2/简单组合.md","articles":[]},"previous":{"title":"5-找到并打印所有路径","level":"1.2.5","depth":2,"path":"Chapter1/find-and-print-paths.md","ref":"Chapter1/find-and-print-paths.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","livereload"],"pluginsConfig":{"expandable-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter2/README.md","mtime":"2019-03-05T10:42:29.414Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-09T08:49:34.446Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,8 @@
+C:\Users\boris\Dropbox\Algorithms\3. Sorting-and-Searching-Algorithms\Homework\Homework\08_Needles\bin\Debug\08_Needles.exe.config
+C:\Users\boris\Dropbox\Algorithms\3. Sorting-and-Searching-Algorithms\Homework\Homework\08_Needles\bin\Debug\08_Needles.exe
+C:\Users\boris\Dropbox\Algorithms\3. Sorting-and-Searching-Algorithms\Homework\Homework\08_Needles\bin\Debug\08_Needles.pdb
+C:\Users\boris\Dropbox\Algorithms\3. Sorting-and-Searching-Algorithms\Homework\Homework\08_Needles\obj\Debug\08_Needles.csprojResolveAssemblyReference.cache
+C:\Users\boris\Dropbox\Algorithms\3. Sorting-and-Searching-Algorithms\Homework\Homework\08_Needles\obj\Debug\08_Needles.exe
+C:\Users\boris\Dropbox\Algorithms\3. Sorting-and-Searching-Algorithms\Homework\Homework\08_Needles\obj\Debug\08_Needles.pdb
+C:\Users\boris\Dropbox\Algorithms\3. Sorting-and-Searching-Algorithms\Homework\Homework\08_Needles\bin\Debug\PowerCollections.dll
+C:\Users\boris\Dropbox\Algorithms\3. Sorting-and-Searching-Algorithms\Homework\Homework\08_Needles\bin\Debug\PowerCollections.xml

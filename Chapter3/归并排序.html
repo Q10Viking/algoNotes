@@ -1,0 +1,675 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第五节 归并排序 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="二分法搜索.html" />
+    
+    
+    <link rel="prev" href="快速排序.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Chapter1/">
+            
+                <a href="../Chapter1/">
+            
+                    
+                    第一章-递归(Recursion)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Chapter1/Recursive-Array-Sum.html">
+            
+                <a href="../Chapter1/Recursive-Array-Sum.html">
+            
+                    
+                    1-数组求和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Chapter1/generate01.html">
+            
+                <a href="../Chapter1/generate01.html">
+            
+                    
+                    2-生成所有的01组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Chapter1/combineGenerator.html">
+            
+                <a href="../Chapter1/combineGenerator.html">
+            
+                    
+                    3-所有数字组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Chapter1/eight-Queen-puzzle.html">
+            
+                <a href="../Chapter1/eight-Queen-puzzle.html">
+            
+                    
+                    4-八皇后问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../Chapter1/find-and-print-paths.html">
+            
+                <a href="../Chapter1/find-and-print-paths.html">
+            
+                    
+                    5-找到并打印所有路径
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Chapter2/">
+            
+                <a href="../Chapter2/">
+            
+                    
+                    第二章-组合及排列(Combinatorial)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Chapter2/简单组合.html">
+            
+                <a href="../Chapter2/简单组合.html">
+            
+                    
+                    第一节 元素重复有序组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Chapter2/元素只取一次组合.html">
+            
+                <a href="../Chapter2/元素只取一次组合.html">
+            
+                    
+                    第二节 元素不重复有序组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Chapter2/元素可重复但顺序无影响.html">
+            
+                <a href="../Chapter2/元素可重复但顺序无影响.html">
+            
+                    
+                    第三节 元素重复无序组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../Chapter2/元素不可重复并且顺序无影响.html">
+            
+                <a href="../Chapter2/元素不可重复并且顺序无影响.html">
+            
+                    
+                    第四节 元素不重复无序组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../Chapter2/遍历生成数字组合.html">
+            
+                <a href="../Chapter2/遍历生成数字组合.html">
+            
+                    
+                    第五节 数字递增形式的组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../Chapter2/排列问题.html">
+            
+                <a href="../Chapter2/排列问题.html">
+            
+                    
+                    第六节 元素无重复排列问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../Chapter2/有元素重复排序问题.html">
+            
+                <a href="../Chapter2/有元素重复排序问题.html">
+            
+                    
+                    第七节 有元素重复排列问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第三章-排序及搜索(Sorting-Searching)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="选择排序.html">
+            
+                <a href="选择排序.html">
+            
+                    
+                    第一节 选择排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="冒泡排序.html">
+            
+                <a href="冒泡排序.html">
+            
+                    
+                    第二节 冒泡排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="插入排序.html">
+            
+                <a href="插入排序.html">
+            
+                    
+                    第三节 插入排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="快速排序.html">
+            
+                <a href="快速排序.html">
+            
+                    
+                    第四节 快速排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.5" data-path="归并排序.html">
+            
+                <a href="归并排序.html">
+            
+                    
+                    第五节 归并排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="二分法搜索.html">
+            
+                <a href="二分法搜索.html">
+            
+                    
+                    第六节 二分搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="插补法搜索.html">
+            
+                <a href="插补法搜索.html">
+            
+                    
+                    第七节 插补法搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="洗牌算法.html">
+            
+                <a href="洗牌算法.html">
+            
+                    
+                    第八节 洗牌算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Chapter4/">
+            
+                <a href="../Chapter4/">
+            
+                    
+                    第四章-动态规划(Dynamic Programming)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Chapter4/LIS-Algorithm.html">
+            
+                <a href="../Chapter4/LIS-Algorithm.html">
+            
+                    
+                    第一节 找最长子串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Chapter4/Right-Down.html">
+            
+                <a href="../Chapter4/Right-Down.html">
+            
+                    
+                    第二节 计算最大和
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第五节 归并排序</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x5F52;&#x5E76;&#x6392;&#x5E8F;">&#x5F52;&#x5E76;&#x6392;&#x5E8F;</h2>
+<ul>
+<li><p>Merge sort is efficient sorting algorithm (visualize)</p>
+<ul>
+<li>Divide the list into sub-lists (typically 2 sub-lists)</li>
+<li>Sort each sub-list (recursively call merge-sort)</li>
+<li>Merge the sorted sub-lists into a single list</li>
+</ul>
+</li>
+<li><p>Best, average and worst case: O(n*log(n))</p>
+</li>
+<li>Memory: <ul>
+<li>Typically O(n)</li>
+<li>With in-place merge can be O(1)</li>
+</ul>
+</li>
+<li>Highly <strong>parallelizable on multiple cores</strong> / machines &#xF0E0; up to O(log(n))</li>
+</ul>
+<p><img src="../images/chapter3/merge-sort.png" alt=""></p>
+<p>&#x5C06;&#x6570;&#x7EC4;&#x4E0D;&#x65AD;&#x5206;&#x6210;&#x4E24;&#x4EFD;&#xFF0C;&#x76F4;&#x5230;&#x53EA;&#x5269;&#x4E00;&#x4E2A;&#x5143;&#x7D20;</p>
+<p>&#x5728;&#x56DE;&#x6EAF;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x53C8;&#x4E0D;&#x65AD;&#x7684;&#x5408;&#x5E76;</p>
+<p><strong>&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;</strong>&#xFF1A; &#x4E00;&#x4E2A;&#x662F;merge_sort&#x4E0D;&#x65AD;&#x7684;&#x5206;&#x89E3;&#xFF0C;&#x4E00;&#x4E2A;merge&#x5728;&#x56DE;&#x6EAF;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x4E0D;&#x65AD;&#x5408;&#x5E76;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> random
+
+<span class="hljs-comment"># &#x8FD4;&#x56DE;&#x6392;&#x5E8F;&#x53F7;&#x7684;&#x6570;&#x7EC4;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">merge_sort</span><span class="hljs-params">(arr)</span>:</span>
+    <span class="hljs-keyword">if</span> len(arr) == <span class="hljs-number">1</span>:
+        <span class="hljs-keyword">return</span> arr  <span class="hljs-comment"># list aready sorted</span>
+    middle = len(arr)//<span class="hljs-number">2</span>
+    left_arr = arr[:middle]
+    right_arr = arr[middle:]
+    left_arr = merge_sort(left_arr)
+    right_arr = merge_sort(right_arr)
+    <span class="hljs-keyword">return</span> merge(left_arr,right_arr)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">merge</span><span class="hljs-params">(leftList,rightList)</span>:</span>
+    <span class="hljs-comment"># &#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;list&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x5408;&#x5E76;&#x7684;&#x7ED3;&#x679C;</span>
+    mergeList = [<span class="hljs-keyword">None</span>]*(len(leftList)+len(rightList))
+    leftIndex,rightIndex,mergedIndex = <span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>
+    <span class="hljs-comment"># &#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x5217;&#x8868;&#x6DFB;&#x52A0;</span>
+    <span class="hljs-keyword">while</span> leftIndex&lt;len(leftList) <span class="hljs-keyword">and</span> rightIndex&lt;len(rightList):
+        <span class="hljs-keyword">if</span> leftList[leftIndex] &lt; rightList[rightIndex]:
+            mergeList[mergedIndex] = leftList[leftIndex]
+            leftIndex += <span class="hljs-number">1</span>
+        <span class="hljs-keyword">else</span>:
+            mergeList[mergedIndex] = rightList[rightIndex]
+            rightIndex += <span class="hljs-number">1</span>
+        mergedIndex += <span class="hljs-number">1</span>
+    <span class="hljs-comment"># &#x5904;&#x7406;&#x8FD8;&#x6709;&#x5269;&#x4F59;&#x9879;&#x7684;&#x5217;&#x8868;</span>
+    <span class="hljs-keyword">while</span> leftIndex &lt; len(leftList):
+        mergeList[mergedIndex]= leftList[leftIndex]
+        leftIndex += <span class="hljs-number">1</span>
+        mergedIndex += <span class="hljs-number">1</span>
+    <span class="hljs-keyword">while</span> rightIndex &lt; len(rightList):
+        mergeList[mergedIndex]=rightList[rightIndex]
+        rightIndex += <span class="hljs-number">1</span>
+        mergedIndex += <span class="hljs-number">1</span>
+    <span class="hljs-keyword">return</span> mergeList
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    arr = [_ <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(<span class="hljs-number">10</span>)]
+    random.shuffle(arr)
+    print(<span class="hljs-string">&quot;Before: &quot;</span>,arr)
+    arr = merge_sort(arr)
+    print(<span class="hljs-string">&quot;After: &quot;</span>,arr)
+
+<span class="hljs-string">&apos;&apos;&apos;
+Before:  [4, 1, 5, 8, 0, 2, 6, 3, 7, 9]
+After:  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+&apos;&apos;&apos;</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="快速排序.html" class="navigation navigation-prev " aria-label="Previous page: 第四节 快速排序">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="二分法搜索.html" class="navigation navigation-next " aria-label="Next page: 第六节 二分搜索">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第五节 归并排序","level":"1.4.5","depth":2,"next":{"title":"第六节 二分搜索","level":"1.4.6","depth":2,"path":"Chapter3/二分法搜索.md","ref":"Chapter3/二分法搜索.md","articles":[]},"previous":{"title":"第四节 快速排序","level":"1.4.4","depth":2,"path":"Chapter3/快速排序.md","ref":"Chapter3/快速排序.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","livereload"],"pluginsConfig":{"expandable-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter3/归并排序.md","mtime":"2019-03-06T05:17:25.876Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-09T08:49:34.446Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
